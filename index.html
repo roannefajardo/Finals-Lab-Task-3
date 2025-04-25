@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Roanne's EDM Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0d0d0d, #8a2be2);
+      color: #fff;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem 1rem;
+      background-color: rgba(0, 0, 0, 0.7);
+      box-shadow: 0 4px 12px #ff69b4;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff;
+      color: #ffb6c1;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+      color: #ffccff;
+    }
+
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid #ffb6c1;
+      margin: 20px auto;
+      display: block;
+      object-fit: cover;
+      box-shadow: 0 0 15px #ff66cc;
+    }
+
+    section {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin: 2rem 0 1rem;
+      color: #ffccff;
+      text-align: center;
+      text-shadow: 0 0 5px #ff99ff;
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.6);
+      border: 2px solid #ff69b4;
+      border-radius: 15px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 15px #ff1493;
+    }
+
+    .card p, .card a {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #ffe6f0;
+    }
+
+    .card a {
+      display: inline-block;
+      margin: 0.4rem 0;
+      color: #ffb6c1;
+      text-decoration: none;
+      border-bottom: 1px dashed #fff;
+      transition: 0.3s;
+    }
+
+    .card a:hover {
+      color: #fff;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid #fff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      background-color: #1a1a1a;
+      color: #ffb6c1;
+      box-shadow: 0 -4px 12px #da70d6;
+    }
+
+    /* Glitter animation */
+    .glitter {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background-image: url('https://i.pinimg.com/originals/0f/38/17/0f3817da1af829075774018b36ebb587.gif');
+      background-repeat: repeat;
+      opacity: 0.08;
+      z-index: 0;
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      transform: rotate(45deg);
+      animation: float 10s infinite;
+      opacity: 0.7;
+      z-index: 0;
+    }
+
+    .heart::before, .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+      }
+      100% {
+        transform: translateY(-100vh) rotate(360deg);
+      }
+    }
+
+    /* Ensuring images autofit */
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="glitter"></div>
+
+  <!-- Floating Hearts -->
+  <script>
+    for (let i = 0; i < 20; i++) {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.style.left = `${Math.random() * 100}%`;
+      heart.style.animationDuration = `${5 + Math.random() * 10}s`;
+      document.body.appendChild(heart);
+    }
+  </script>
+
+  <header>
+    <h1>🌸 Finals Lab Task 3 - Table Manipulation 🌸</h1>
+    <p>🌷Shining through code and creativity🌷 </p>
+  </header>
+
+  <section>
+    <h2>Portfolio Overview</h2>
+    <div class="card">
+      <p>This portfolio focuses on learning the fundamentals of MySQL by designing and working with a basic product database. It involves straightforward tasks such as creating a table, applying constraints, inserting valid records, and modifying a column. The objective is to gain hands-on experience in structuring and managing a simple SQL-based database.</p>
+    </div>
+
+    <h2>Step by Step Process</h2>
+    <div class="card">
+       <ol>
+    <li>
+      <strong>Create the <code>products</code> Table</strong><br>
+      <ul>
+        <li>Set up a table called <code>products</code> with the following columns:</li>
+        <ul>
+          <li><code>id</code>: Auto-incrementing primary key</li>
+          <li><code>product_name</code>: Text field (up to 100 characters), cannot be null</li>
+          <li><code>price</code>: Decimal value</li>
+        </ul>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Add a Constraint</strong><br>
+      <ul>
+        <li>Implement a <code>CHECK</code> constraint to ensure that the <code>price</code> is greater than 0.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Insert Valid Product Records</strong><br>
+      <ul>
+        <li>Only input products with a positive price:</li>
+        <ul>
+          <li>Laptop – 999.99</li>
+          <li>Smartphone – 599.99</li>
+          <li>Tablet – 299.99</li>
+          <li>Keyboard – 19.99</li>
+          <li>Mouse – 14.99</li>
+          <li>Desk Lamp – 24.99</li>
+          <li>Speakers – 9.99</li>
+        </ul>
+        <li>Exclude any items with negative pricing.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Modify the Table</strong><br>
+      <ul>
+        <li>Update the <code>product_name</code> column to allow up to 120 characters instead of the original 100.</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h2>SQL Query Statements</h2>
+
+  <h3>1. Task 1 – Creating the Table</h3>
+  <img src="https://github.com/user-attachments/assets/24b64e18-6486-420e-b7bc-6ef778aabe85" alt="Creating Table Image">
+
+  <h3>2. Task 2 – Adding a Price Constraint</h3>
+  <img src="https://github.com/user-attachments/assets/acc2796b-1a05-45a3-bf33-ac8ac4214cb2" alt="Price Constraint Image">
+
+  <h3>3. Task 3 – Inserting Valid Products</h3>
+  <img src="https://github.com/user-attachments/assets/d3e07299-59b1-4ea6-a103-2549a2122feb" alt="Insert Products Image">
+
+  <h3>4. Task 4 – Altering the <code>product_name</code> Field</h3>
+  <img src="https://github.com/user-attachments/assets/4f17496f-57f1-4434-bec8-1b0f01f47e57" alt="Alter Table Image">
+
+  <h2>Table Structure</h2>
+  <img src="https://github.com/user-attachments/assets/220089fd-ffe2-44c9-8870-c50717b19e7e" alt="Table Structure 1">
+  <img src="https://github.com/user-attachments/assets/6803f3a3-a12e-4323-a871-cb84e756a3c1" alt="Table Structure 2">
+
+  <h2>ER Diagram</h2>
+  <img src="https://github.com/user-attachments/assets/fe809343-f99d-44f2-9e82-8882b49b259f" alt="ER Diagram">
+</body>
+</html>
+    </div>
+  </section>
+
+  <footer>
+    🎀Stay Fierce, Stay Fabulous, and keep coding🎀
+  </footer>
+
+</body>
+</html>
